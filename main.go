@@ -79,7 +79,7 @@ func readFilename() (string, error, bool) {
 
 	filename := strings.Trim(string(val), " \t\r\n")
 	if len(filename) == 0 {
-		return "", errors.New("filename name is empty"), true
+		return "", errors.New("filename is empty"), true
 	}
 
 	return filename, nil, false
@@ -100,7 +100,7 @@ func readDir(filename string) (string, error) {
 }
 
 func pwd() (string, error) {
-	//for debug mode: return ".",nil
+	//for debug mode:
 	//return ".", nil
 	path, err := os.Executable()
 	if err != nil {
